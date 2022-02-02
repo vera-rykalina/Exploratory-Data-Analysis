@@ -1,0 +1,113 @@
+---
+title: "Analysis of Submetered Houshold Energy Consumption"
+author: "Vera Rykalina"
+date: "3/30/2020"
+output: beamer_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+
+```{r loading_packages, message = FALSE, echo=FALSE}
+library(dplyr)
+library(ggplot2)
+library(kableExtra)
+```
+
+
+```{r}
+load("~/Desktop/DA_Online/IoT Analytics/1 Domain Research and Exploratory Data Analysis/tables.RData")
+```
+
+
+## Agenda
+
+- Background
+- Challenges
+- Deliverables
+- Approach
+- Preliminary results
+- Recommendations
+
+
+## Smart Home
+- Can be determined as usage of technical systems, automated processes and connected, remote-controlled devices in flats and houses. 
+- The essential aim of the functions is to improve the quality of life and convenience in home. 
+- Last but not least is greater security and more efficient use of energy
+
+## Challenges
+
+Will smart home owner benefit from submeterings based on:
+
+ - payoff despite installation and maintenance expenses
+ - more rational (controlled) energy usage and go-green reputation 
+
+Can smart home buyer take advantage of anonymous selling own data records?
+
+## Suggestions
+
+- Electric power consumption reports in kWatt/hour and € terms 
+- Detailed energy records based on appliance nature and house location
+- Prediction of future electric power usage trends
+
+## Approach 
+
+- Missing values treatment
+- Adjustment of proper granularity level
+- Predictive modelling
+- Intercative dashboards
+
+## Deliverables 
+
+### Commercially viable product
+
+- I   Deep data analysis (January 2011)
+- II  Predictive analytics (February 2011)
+- III Dashboard software development (April 2011)
+
+### Elaboration
+
+- Development of savings strategies
+- Correction of negative houshold behaviour patterns
+
+
+## Total Energy Consumption
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+  pad.table %>%
+  select(GAP, Submeter_1, Submeter_2, Submeter_3) %>%
+  summary() %>%
+  knitr::kable() %>%
+  kable_styling(latex_options = "scale_down")
+  #knitr::kable()
+
+```
+
+## Missing Values
+<center>
+![](~/Desktop/DA_Online/IoT Analytics/1 Domain Research and Exploratory Data Analysis/missing.png)
+</center>
+
+## Energy Usage (by month)
+<center>
+![](~/Desktop/DA_Online/IoT Analytics/1 Domain Research and Exploratory Data Analysis/year_month.png)
+</center>
+
+## Energy Usage (by day of week)
+<center>
+![](~/Desktop/DA_Online/IoT Analytics/1 Domain Research and Exploratory Data Analysis/year_weekday.png)
+</center>
+
+
+## Recommendations
+- Gas submeter can be advised for consideration as overall gas consumption can compromise kitchen performance. Depending on cooking preferances (mainly using gas powered hot plates) kitchen data would be biased.
+- Eating outside may reduce energy consumption in the kitchen area. Collection of catering bills on monthly basis could facilitate kitchen associated data quality.
+
+
+## Thank you!
+
+
+
+
+
